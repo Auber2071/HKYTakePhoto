@@ -12,18 +12,15 @@
 
 @protocol HKYDefineAlertViewDelegate <NSObject>
 
--(void)alertViewCancelAction;
--(void)alertViewSureAction;
--(void)alertViewTakePhotoAction;
+- (void)defineAlertView:(HKYDefineAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 
 @end
 
 @interface HKYDefineAlertView : UIWindow
-@property (nonatomic, assign) id<HKYDefineAlertViewDelegate> alertViewDelegate;
 
-//+(HKYDefineAlertView *)sharedInstance;
+- (instancetype)initWithTitle:(NSString *)title delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitle;
 
--(void)setupAlertViewPhotoImg:(UIImage *)photoImage;
+-(void)setupDefineAlertViewPhotoImg:(UIImage *)photoImage;
 -(void)show;
 -(void)dismiss;
 

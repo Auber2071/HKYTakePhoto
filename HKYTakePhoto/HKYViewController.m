@@ -11,7 +11,7 @@
 #import "HKYDefineAlertView.h"
 
 
-@interface HKYViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,HKYDefineAlertViewDelegate>
+@interface HKYViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,HKYDefineAlertViewDelegate,UIAlertViewDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) HKYDefineAlertView *defineAlertView;
 
@@ -24,15 +24,11 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(p_showAlertView)];
     self.navigationItem.rightBarButtonItem = barButtonItem;
-     
-    [self.view addSubview:self.imageView];
 }
 
 -(void)p_showAlertView{
     [self.defineAlertView show];
-    
 }
-
 
 -(void)p_takePhoto{
     HKYDefineImagePickerController *imagePicker = [[HKYDefineImagePickerController alloc] init];
@@ -54,43 +50,40 @@
 
 
 #pragma mark - UIImagePickerControllerDelegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo{
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self.defineAlertView show];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *originalImage;
     if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:@"public.image"]) {
         originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
-//    __weak typeof(self) tempSelf = self;
-//    [picker dismissViewControllerAnimated:YES completion:^{
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-//            UIImage *tempImg =[UIImage imageWithData: UIImageJPEGRepresentation(originalImage,0.5)];
-//            [tempSelf.defineAlertView setupAlertViewPhotoImg:tempImg];
-//        });
-//    }];
     
     [self.defineAlertView show];
     UIImage *tempImg =[UIImage imageWithData: UIImageJPEGRepresentation(originalImage,0.5)];
-    [self.defineAlertView setupAlertViewPhotoImg:tempImg];
+    [self.defineAlertView setupDefineAlertViewPhotoImg:tempImg];
 
 }
 
 #pragma mark - HKYDefineAlertViewDelegate
--(void)alertViewCancelAction{
-    [self.defineAlertView dismiss];
-}
--(void)alertViewSureAction{
-    //打卡成功消失
-    [self.defineAlertView dismiss];
-}
--(void)alertViewTakePhotoAction{
-    [self p_takePhoto];
+- (void)defineAlertView:(HKYDefineAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {//取消
+        
+    }else if (buttonIndex == 1){//确定
+        [self.defineAlertView dismiss];
+    }else if (buttonIndex ==2){
+        [self p_takePhoto];
+    }
 }
 
 #pragma mark - HKYAlert
 -(HKYDefineAlertView *)defineAlertView{
     if (!_defineAlertView) {
-        _defineAlertView = [[HKYDefineAlertView alloc] initWithFrame:self.view.bounds];
-        _defineAlertView.alertViewDelegate = self;
+        _defineAlertView = [[HKYDefineAlertView alloc] initWithTitle:@"请上传头像" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定"];
     }
     return _defineAlertView;
 }

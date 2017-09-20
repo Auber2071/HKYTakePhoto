@@ -18,29 +18,21 @@
 @property (nonatomic, strong) UIImage *photoImg;
 
 
+@property (nonatomic, assign) id<HKYDefineAlertViewDelegate> alertViewDelegate;
+@property (nonatomic, strong) NSString *cancelButtonTitle;
+@property (nonatomic, strong) NSString *otherButtonTitle;
 @end
 
 #define titleLabFont [UIFont systemFontOfSize:16.f]
 #define btnFont [UIFont systemFontOfSize:14.f]
 
 @implementation HKYDefineAlertView
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
+- (instancetype)initWithTitle:(NSString *)title delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitle{
+    _alertViewDelegate = delegate;
+    _cancelButtonTitle = cancelButtonTitle;
+    _otherButtonTitle = otherButtonTitle;
+    self = [self initWithFrame:[UIScreen mainScreen].bounds];
     return self;
-}
-
-
-+(HKYDefineAlertView *)sharedInstance{
-    static HKYDefineAlertView *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    });
-    return sharedInstance;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -54,7 +46,6 @@
         [self.alertView addSubview:self.btnBottomView];
         [self.btnBottomView addSubview:self.cancelBtn];
         [self.btnBottomView addSubview:self.sureBtn];
-        
     }
     return self;
 }
@@ -70,9 +61,32 @@
     self.hidden = YES;
 }
 
--(void)setupAlertViewPhotoImg:(UIImage *)photoImg{
+-(void)setupDefineAlertViewPhotoImg:(UIImage *)photoImg{
     [self.photoBtn setImage:photoImg forState:UIControlStateNormal];
     self.photoBtn.enabled = NO;
+}
+
+
+#pragma mark - Private Methods
+-(void)p_clickBtn:(UIButton *)sender{
+    if (self.alertViewDelegate && [self.alertViewDelegate respondsToSelector:@selector(defineAlertView:clickedButtonAtIndex:)]) {
+        [self.alertViewDelegate defineAlertView:self clickedButtonAtIndex:sender.tag];
+    }
+    switch (sender.tag) {
+        case 0:{
+            [self dismiss];
+            self.photoBtn.enabled = YES;
+            [self.photoBtn setImage:self.photoImg forState:UIControlStateNormal];
+        }
+            break;
+        case 1:{
+        }
+            break;
+        case 2:{
+            [self dismiss];
+            }
+            break;
+    }
 }
 
 #pragma mark - Get Methods
@@ -106,8 +120,9 @@
     if (!_photoBtn) {
         CGFloat width = CGRectGetHeight(self.alertView.frame)*0.41;
         _photoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _photoBtn.tag = 2;
         [_photoBtn setImage:self.photoImg forState:UIControlStateNormal];
-        [_photoBtn addTarget:self action:@selector(p_takePhoto:) forControlEvents:UIControlEventTouchUpInside];
+        [_photoBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_photoBtn setBounds:CGRectMake(0, 0, width, width)];
         _photoBtn.centerX = CGRectGetWidth(self.alertView.frame)/2.f;
         _photoBtn.centerY = CGRectGetHeight(self.alertView.frame)/2.f;
@@ -132,11 +147,12 @@
 -(UIButton *)cancelBtn{
     if (!_cancelBtn) {
         _cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        _cancelBtn.tag = 0;
+        [_cancelBtn setTitle:self.cancelButtonTitle forState:UIControlStateNormal];
         [_cancelBtn.titleLabel setFont:btnFont];
         [_cancelBtn setTitleColor:UIColorFromRGB(0x666666) forState:UIControlStateNormal];
         [_cancelBtn setBackgroundColor:[UIColor whiteColor]];
-        [_cancelBtn addTarget:self action:@selector(p_clickCancelBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_cancelBtn setFrame:CGRectMake(0, 1, CGRectGetWidth(self.btnBottomView.frame)/2.f-0.5, CGRectGetHeight(self.btnBottomView.frame))];
     }
     return _cancelBtn;
@@ -145,11 +161,12 @@
 -(UIButton *)sureBtn{
     if (!_sureBtn) {
         _sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_sureBtn setTitle:@"确定" forState:UIControlStateNormal];
+        _sureBtn.tag = 1;
+        [_sureBtn setTitle:self.otherButtonTitle forState:UIControlStateNormal];
         [_sureBtn.titleLabel setFont:btnFont];
         [_sureBtn setTitleColor:UIColorFromRGB(0x1c85fa) forState:UIControlStateNormal];
         [_sureBtn setBackgroundColor:[UIColor whiteColor]];
-        [_sureBtn addTarget:self action:@selector(p_clickSureBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_sureBtn addTarget:self action:@selector(p_clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_sureBtn setFrame:CGRectMake(CGRectGetMaxX(self.cancelBtn.frame)+1, CGRectGetMinY(self.cancelBtn.frame), CGRectGetWidth(self.btnBottomView.frame) - CGRectGetWidth(self.cancelBtn.frame), CGRectGetHeight(self.cancelBtn.frame))];
     }
     return _sureBtn;
@@ -162,30 +179,6 @@
         _photoImg = [UIImage imageNamed:@"lan"];
     }
     return _photoImg;
-}
-
-
-#pragma mark - Private Methods
-
--(void)p_clickCancelBtn:(UIButton *)sender{
-    if (self.alertViewDelegate && [self.alertViewDelegate respondsToSelector:@selector(alertViewCancelAction)]) {
-        [self.alertViewDelegate alertViewCancelAction];
-    }
-    self.photoBtn.enabled = YES;
-    [self.photoBtn setImage:self.photoImg forState:UIControlStateNormal];
-}
-
--(void)p_clickSureBtn:(UIButton *)sender{
-    if (self.alertViewDelegate && [self.alertViewDelegate respondsToSelector:@selector(alertViewSureAction)]) {
-        [self.alertViewDelegate alertViewSureAction];
-    }
-}
-
--(void)p_takePhoto:(UIButton *)sender{
-    if (self.alertViewDelegate && [self.alertViewDelegate respondsToSelector:@selector(alertViewTakePhotoAction)]) {
-        [self.alertViewDelegate alertViewTakePhotoAction];
-    }
-    [self dismiss];
 }
 
 @end
