@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HKYViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    HKYViewController *VC = [[HKYViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:VC];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = navi;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

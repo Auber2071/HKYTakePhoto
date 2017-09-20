@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HKYDefineImagePickerController.h
 //  HKYTakePhoto
 //
 //  Created by hankai on 2017/9/20.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface HKYDefineImagePickerController : UIImagePickerController
 
 @end
-

@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		263EDEE21F72090500F08DA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDEE11F72090500F08DA9 /* main.m */; };
 		263EDEE51F72090500F08DA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDEE41F72090500F08DA9 /* AppDelegate.m */; };
-		263EDEE81F72090500F08DA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDEE71F72090500F08DA9 /* ViewController.m */; };
-		263EDEEB1F72090500F08DA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263EDEE91F72090500F08DA9 /* Main.storyboard */; };
-		263EDEED1F72090500F08DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263EDEEC1F72090500F08DA9 /* Assets.xcassets */; };
-		263EDEF01F72090500F08DA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263EDEEE1F72090500F08DA9 /* LaunchScreen.storyboard */; };
+		263EDEE81F72090500F08DA9 /* HKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDEE71F72090500F08DA9 /* HKYViewController.m */; };
+		263EDEFA1F720F6C00F08DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263EDEF91F720F6C00F08DA9 /* Assets.xcassets */; };
+		263EDF001F7243C900F08DA9 /* HKYDefineImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDEFF1F7243C900F08DA9 /* HKYDefineImagePickerController.m */; };
+		263EDF051F72465700F08DA9 /* UIView+HKYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDF041F72465600F08DA9 /* UIView+HKYExtension.m */; };
+		263EDF0D1F726A0900F08DA9 /* HKYDefineAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDF0C1F726A0900F08DA9 /* HKYDefineAlertView.m */; };
+		263EDF131F72855A00F08DA9 /* lan.png in Resources */ = {isa = PBXBuildFile; fileRef = 263EDF101F72855A00F08DA9 /* lan.png */; };
+		263EDF141F72855A00F08DA9 /* lan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 263EDF111F72855A00F08DA9 /* lan@2x.png */; };
+		263EDF151F72855A00F08DA9 /* lan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 263EDF121F72855A00F08DA9 /* lan@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +24,20 @@
 		263EDEE11F72090500F08DA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		263EDEE31F72090500F08DA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		263EDEE41F72090500F08DA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		263EDEE61F72090500F08DA9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		263EDEE71F72090500F08DA9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		263EDEEA1F72090500F08DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		263EDEEC1F72090500F08DA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		263EDEEF1F72090500F08DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		263EDEE61F72090500F08DA9 /* HKYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKYViewController.h; sourceTree = "<group>"; };
+		263EDEE71F72090500F08DA9 /* HKYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKYViewController.m; sourceTree = "<group>"; };
 		263EDEF11F72090500F08DA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		263EDEF91F720F6C00F08DA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		263EDEFE1F7243C900F08DA9 /* HKYDefineImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKYDefineImagePickerController.h; sourceTree = "<group>"; };
+		263EDEFF1F7243C900F08DA9 /* HKYDefineImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKYDefineImagePickerController.m; sourceTree = "<group>"; };
+		263EDF021F7245C400F08DA9 /* HKYPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKYPrefixHeader.pch; sourceTree = "<group>"; };
+		263EDF031F72465600F08DA9 /* UIView+HKYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HKYExtension.h"; sourceTree = "<group>"; };
+		263EDF041F72465600F08DA9 /* UIView+HKYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HKYExtension.m"; sourceTree = "<group>"; };
+		263EDF0B1F726A0900F08DA9 /* HKYDefineAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKYDefineAlertView.h; sourceTree = "<group>"; };
+		263EDF0C1F726A0900F08DA9 /* HKYDefineAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKYDefineAlertView.m; sourceTree = "<group>"; };
+		263EDF101F72855A00F08DA9 /* lan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lan.png; sourceTree = "<group>"; };
+		263EDF111F72855A00F08DA9 /* lan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lan@2x.png"; sourceTree = "<group>"; };
+		263EDF121F72855A00F08DA9 /* lan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lan@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +72,12 @@
 			children = (
 				263EDEE31F72090500F08DA9 /* AppDelegate.h */,
 				263EDEE41F72090500F08DA9 /* AppDelegate.m */,
-				263EDEE61F72090500F08DA9 /* ViewController.h */,
-				263EDEE71F72090500F08DA9 /* ViewController.m */,
-				263EDEE91F72090500F08DA9 /* Main.storyboard */,
-				263EDEEC1F72090500F08DA9 /* Assets.xcassets */,
-				263EDEEE1F72090500F08DA9 /* LaunchScreen.storyboard */,
-				263EDEF11F72090500F08DA9 /* Info.plist */,
+				263EDEE61F72090500F08DA9 /* HKYViewController.h */,
+				263EDEE71F72090500F08DA9 /* HKYViewController.m */,
+				263EDEFE1F7243C900F08DA9 /* HKYDefineImagePickerController.h */,
+				263EDEFF1F7243C900F08DA9 /* HKYDefineImagePickerController.m */,
+				263EDF0B1F726A0900F08DA9 /* HKYDefineAlertView.h */,
+				263EDF0C1F726A0900F08DA9 /* HKYDefineAlertView.m */,
 				263EDEE01F72090500F08DA9 /* Supporting Files */,
 			);
 			path = HKYTakePhoto;
@@ -74,6 +86,14 @@
 		263EDEE01F72090500F08DA9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				263EDF021F7245C400F08DA9 /* HKYPrefixHeader.pch */,
+				263EDF031F72465600F08DA9 /* UIView+HKYExtension.h */,
+				263EDF041F72465600F08DA9 /* UIView+HKYExtension.m */,
+				263EDEF91F720F6C00F08DA9 /* Assets.xcassets */,
+				263EDF101F72855A00F08DA9 /* lan.png */,
+				263EDF111F72855A00F08DA9 /* lan@2x.png */,
+				263EDF121F72855A00F08DA9 /* lan@3x.png */,
+				263EDEF11F72090500F08DA9 /* Info.plist */,
 				263EDEE11F72090500F08DA9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -105,6 +125,7 @@
 		263EDED51F72090500F08DA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HKY;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Vencent;
 				TargetAttributes = {
@@ -138,9 +159,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263EDEF01F72090500F08DA9 /* LaunchScreen.storyboard in Resources */,
-				263EDEED1F72090500F08DA9 /* Assets.xcassets in Resources */,
-				263EDEEB1F72090500F08DA9 /* Main.storyboard in Resources */,
+				263EDEFA1F720F6C00F08DA9 /* Assets.xcassets in Resources */,
+				263EDF141F72855A00F08DA9 /* lan@2x.png in Resources */,
+				263EDF131F72855A00F08DA9 /* lan.png in Resources */,
+				263EDF151F72855A00F08DA9 /* lan@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,32 +173,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263EDEE81F72090500F08DA9 /* ViewController.m in Sources */,
+				263EDF051F72465700F08DA9 /* UIView+HKYExtension.m in Sources */,
+				263EDEE81F72090500F08DA9 /* HKYViewController.m in Sources */,
 				263EDEE51F72090500F08DA9 /* AppDelegate.m in Sources */,
+				263EDF0D1F726A0900F08DA9 /* HKYDefineAlertView.m in Sources */,
+				263EDF001F7243C900F08DA9 /* HKYDefineImagePickerController.m in Sources */,
 				263EDEE21F72090500F08DA9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		263EDEE91F72090500F08DA9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				263EDEEA1F72090500F08DA9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		263EDEEE1F72090500F08DA9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				263EDEEF1F72090500F08DA9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		263EDEF21F72090500F08DA9 /* Debug */ = {
@@ -273,7 +279,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = DH6P4GZ73C;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HKYTakePhoto/HKYPrefixHeader.pch";
 				INFOPLIST_FILE = HKYTakePhoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Vencent.HKYTakePhoto;
@@ -285,7 +294,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = DH6P4GZ73C;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HKYTakePhoto/HKYPrefixHeader.pch";
 				INFOPLIST_FILE = HKYTakePhoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Vencent.HKYTakePhoto;
@@ -312,6 +324,7 @@
 				263EDEF61F72090500F08DA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
