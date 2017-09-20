@@ -155,6 +155,8 @@
     return _sureBtn;
 }
 
+
+
 -(UIImage *)photoImg{
     if (!_photoImg) {
         _photoImg = [UIImage imageNamed:@"lan"];
