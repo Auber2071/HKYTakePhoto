@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIButton *cancelBtn;
 @property (nonatomic, strong) UIButton *sureBtn;
 @property (nonatomic, strong) UIImage *photoImg;
+@property (nonatomic, strong) UILabel *msgLab;
 
 
 @property (nonatomic, assign) id<HKYDefineAlertViewDelegate> alertViewDelegate;
@@ -43,6 +44,7 @@
         [self addSubview:self.alertView];
         [self.alertView addSubview:self.titleLab];
         [self.alertView addSubview:self.photoBtn];
+        [self.alertView addSubview:self.msgLab];
         [self.alertView addSubview:self.btnBottomView];
         [self.btnBottomView addSubview:self.cancelBtn];
         [self.btnBottomView addSubview:self.sureBtn];
@@ -66,7 +68,9 @@
     self.photoBtn.enabled = NO;
 }
 
-
+-(void)setupMsg:(NSString *)msg{
+    self.msgLab.text = msg;
+}
 #pragma mark - Private Methods
 -(void)p_clickBtn:(UIButton *)sender{
     if (self.alertViewDelegate && [self.alertViewDelegate respondsToSelector:@selector(defineAlertView:clickedButtonAtIndex:)]) {
@@ -132,6 +136,18 @@
     return _photoBtn;
 }
 
+-(UILabel *)msgLab{
+    if (!_msgLab) {
+        _msgLab = [[UILabel alloc] init];
+        _msgLab.textColor = UIColorFromRGB(0x666666);
+        _msgLab.text = @"正在上传。。。";
+        _msgLab.textAlignment = NSTextAlignmentCenter;
+        _msgLab.font = btnFont;
+        _msgLab.frame = CGRectMake(0, CGRectGetMaxY(self.photoBtn.frame), CGRectGetWidth(self.alertView.frame), CGRectGetMinY(self.btnBottomView.frame) - CGRectGetMaxY(self.photoBtn.frame));
+        
+    }
+    return _msgLab;
+}
 
 -(UIView *)btnBottomView{
     if (!_btnBottomView) {

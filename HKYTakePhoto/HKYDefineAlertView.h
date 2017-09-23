@@ -21,6 +21,7 @@
 - (instancetype)initWithTitle:(NSString *)title delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitle;
 
 -(void)setupDefineAlertViewPhotoImg:(UIImage *)photoImage;
+-(void)setupMsg:(NSString *)msg;
 -(void)show;
 -(void)dismiss;
 
