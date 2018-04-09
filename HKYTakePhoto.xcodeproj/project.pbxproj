@@ -12,11 +12,11 @@
 		263EDEE81F72090500F08DA9 /* HKYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDEE71F72090500F08DA9 /* HKYViewController.m */; };
 		263EDEFA1F720F6C00F08DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263EDEF91F720F6C00F08DA9 /* Assets.xcassets */; };
 		263EDF001F7243C900F08DA9 /* HKYDefineImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDEFF1F7243C900F08DA9 /* HKYDefineImagePickerController.m */; };
-		263EDF051F72465700F08DA9 /* UIView+HKYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDF041F72465600F08DA9 /* UIView+HKYExtension.m */; };
 		263EDF0D1F726A0900F08DA9 /* HKYDefineAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 263EDF0C1F726A0900F08DA9 /* HKYDefineAlertView.m */; };
 		263EDF131F72855A00F08DA9 /* lan.png in Resources */ = {isa = PBXBuildFile; fileRef = 263EDF101F72855A00F08DA9 /* lan.png */; };
 		263EDF141F72855A00F08DA9 /* lan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 263EDF111F72855A00F08DA9 /* lan@2x.png */; };
 		263EDF151F72855A00F08DA9 /* lan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 263EDF121F72855A00F08DA9 /* lan@3x.png */; };
+		2B0BB2BF207B42040056B6DE /* UIView+HKYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B0BB2BD207B42040056B6DE /* UIView+HKYExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +31,13 @@
 		263EDEFE1F7243C900F08DA9 /* HKYDefineImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKYDefineImagePickerController.h; sourceTree = "<group>"; };
 		263EDEFF1F7243C900F08DA9 /* HKYDefineImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKYDefineImagePickerController.m; sourceTree = "<group>"; };
 		263EDF021F7245C400F08DA9 /* HKYPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKYPrefixHeader.pch; sourceTree = "<group>"; };
-		263EDF031F72465600F08DA9 /* UIView+HKYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HKYExtension.h"; sourceTree = "<group>"; };
-		263EDF041F72465600F08DA9 /* UIView+HKYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HKYExtension.m"; sourceTree = "<group>"; };
 		263EDF0B1F726A0900F08DA9 /* HKYDefineAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKYDefineAlertView.h; sourceTree = "<group>"; };
 		263EDF0C1F726A0900F08DA9 /* HKYDefineAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKYDefineAlertView.m; sourceTree = "<group>"; };
 		263EDF101F72855A00F08DA9 /* lan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lan.png; sourceTree = "<group>"; };
 		263EDF111F72855A00F08DA9 /* lan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lan@2x.png"; sourceTree = "<group>"; };
 		263EDF121F72855A00F08DA9 /* lan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lan@3x.png"; sourceTree = "<group>"; };
+		2B0BB2BD207B42040056B6DE /* UIView+HKYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HKYExtension.m"; sourceTree = "<group>"; };
+		2B0BB2BE207B42040056B6DE /* UIView+HKYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HKYExtension.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,7 @@
 				263EDEFF1F7243C900F08DA9 /* HKYDefineImagePickerController.m */,
 				263EDF0B1F726A0900F08DA9 /* HKYDefineAlertView.h */,
 				263EDF0C1F726A0900F08DA9 /* HKYDefineAlertView.m */,
+				2B0BB2BC207B42040056B6DE /* class */,
 				263EDEE01F72090500F08DA9 /* Supporting Files */,
 			);
 			path = HKYTakePhoto;
@@ -87,8 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				263EDF021F7245C400F08DA9 /* HKYPrefixHeader.pch */,
-				263EDF031F72465600F08DA9 /* UIView+HKYExtension.h */,
-				263EDF041F72465600F08DA9 /* UIView+HKYExtension.m */,
 				263EDEF91F720F6C00F08DA9 /* Assets.xcassets */,
 				263EDF101F72855A00F08DA9 /* lan.png */,
 				263EDF111F72855A00F08DA9 /* lan@2x.png */,
@@ -97,6 +96,15 @@
 				263EDEE11F72090500F08DA9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2B0BB2BC207B42040056B6DE /* class */ = {
+			isa = PBXGroup;
+			children = (
+				2B0BB2BD207B42040056B6DE /* UIView+HKYExtension.m */,
+				2B0BB2BE207B42040056B6DE /* UIView+HKYExtension.h */,
+			);
+			path = class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,12 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263EDF051F72465700F08DA9 /* UIView+HKYExtension.m in Sources */,
 				263EDEE81F72090500F08DA9 /* HKYViewController.m in Sources */,
 				263EDEE51F72090500F08DA9 /* AppDelegate.m in Sources */,
 				263EDF0D1F726A0900F08DA9 /* HKYDefineAlertView.m in Sources */,
 				263EDF001F7243C900F08DA9 /* HKYDefineImagePickerController.m in Sources */,
 				263EDEE21F72090500F08DA9 /* main.m in Sources */,
+				2B0BB2BF207B42040056B6DE /* UIView+HKYExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
